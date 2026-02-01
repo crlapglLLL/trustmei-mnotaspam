@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>ThisIsNotASpamTrustMeBaby</title>
+
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/gidole');
+
+    body {
+      background-color: #4a148c;
+      color: white;
+      text-align: center;
+      font-family: 'Gidole', Arial, sans-serif;
+      margin: 0;
+      padding: 80px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 40px;
+      margin: 15px 10px;
+      font-size: 16px;
+      font-family: 'Gidole', Arial, sans-serif;
+      cursor: pointer;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      transition: opacity 0.3s;
+      display: inline-block;
+    }
+
+    button:active {
+      opacity: 0.5;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    img {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    div[id^="risultato"], div[id="schermata-iniziale"] {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SCHERMATA INIZIALE -->
+  <div id="schermata-iniziale">
+    <h1>Ciao, so che non mi conosci, sono qui per chiederti... vuoi essere la mia Valentina?</h1>
+    <img src="SCONOSCIUTO.png" alt="Immagine iniziale">
+    <br>
+    <button onclick="scelta1()">Sì certo, non ci penso due volte</button>
+    <button onclick="scelta2()">Aspetta un attimo... ma chi sei? Mi vuoi scammare?</button>
+  </div>
+
+  <!-- RISULTATO PULSANTE 1 -->
+  <div id="risultato-1" style="display: none;">
+    <h1>Wow... ok... non me lo aspettavo, non mi sono preparato a questo! Beh allora...</h1>
+    <img src="ERRORE.png" alt="Immagine scelta 1">
+    <br>
+    <button onclick="scelta1a()">Dimmi di più su di te</button>
+    <button onclick="scelta1b()">Facciamo un primo appuntamento?</button>
+  </div>
+
+  <!-- RISULTATO PULSANTE 2 -->
+  <div id="risultato-2" style="display: none;">
+    <h1>Hai perfettamente ragione ad avere dubbi... quindi ti svelerò chi sono</h1>
+    <img src="MIRIVELO.png" alt="Immagine scelta 2">
+    <br>
+    <button onclick="scelta2a()">Ok, rivelati!</button>
+    <button onclick="scelta2b()">No grazie, non mi interessa</button>
+  </div>
+
+  <!-- RISULTATO PULSANTE 1A -->
+  <div id="risultato-1a" style="display: none;">
+    <h1>Ecco qualcosa su di me: amo le passeggiate al tramonto e la pizza!</h1>
+    <img src="MORTO.png" alt="Immagine scelta 1a">
+    <br>
+    <button onclick="scelta1a1()">Che dolce! Mi piaci</button>
+    <button onclick="scelta1a2()">Hmm, interessante ma voglio sapere altro</button>
+  </div>
+
+  <!-- RISULTATO PULSANTE 1B -->
+  <div id="risultato-1b" style="display: none;">
+    <h1>Certo! Che ne dici di un caffè questo weekend?</h1>
+    <img src="APPUNTAMENTO.png" alt="Immagine scelta 1b">
+    <br>
+    <button onclick="scelta1b1()">Perfetto, ci sto!</button>
+    <button onclick="scelta1b2()">Forse è troppo presto...</button>
+  </div>
+
+  <!-- RISULTATO PULSANTE 2A -->
+  <div id="risultato-2a" style="display: none;">
+    <h1>Sono io! Il tuo segreto ammiratore che ti osserva da lontano!</h1>
+    <img src="MIBUTTO.png" alt="Immagine scelta 2a">
+    <br>
+    <button onclick="scelta2a1()">Davvero?! Che sorpresa!</button>
+    <button onclick="scelta2a2()">Ok... questo è un po' inquietante</button>
+  </div>
+
+  <!-- RISULTATO PULSANTE 2B -->
+  <div id="risultato-2b" style="display: none;">
+    <h1>Capisco... ma almeno dammi una possibilità!</h1>
+    <img src="MARTI.png" alt="Immagine scelta 2b">
+    <br>
+    <button onclick="scelta2b1()">Va bene, una possibilità</button>
+    <button onclick="scelta2b2()">No, davvero non mi interessa</button>
+  </div>
+
+  <!-- RISULTATI FINALI LIVELLO 3 -->
+  <div id="risultato-1a1" style="display: none;">
+    <h1>Yay! Allora è un sì? 💕</h1>
+    <img src="MIRIVELO.png" alt="Finale 1a1">
+  </div>
+
+  <div id="risultato-1a2" style="display: none;">
+    <h1>Certo! Posso raccontarti molto altro di me...</h1>
+    <img src="MORTO.png" alt="Finale 1a2">
+  </div>
+
+  <div id="risultato-1b1" style="display: none;">
+    <h1>Fantastico! Ti mando i dettagli! ☕</h1>
+    <img src="ERRORE.png" alt="Finale 1b1">
+  </div>
+
+  <div id="risultato-1b2" style="display: none;">
+    <h1>Nessun problema, prendiamoci il nostro tempo 😊</h1>
+    <img src="MIBUTTO.png" alt="Finale 1b2">
+  </div>
+
+  <div id="risultato-2a1" style="display: none;">
+    <h1>Sì! E ora che lo sai... vuoi essere la mia Valentina? 💝</h1>
+    <img src="GATTOSTRABICO.png" alt="Finale 2a1">
+  </div>
+
+  <div id="risultato-2a2" style="display: none;">
+    <h1>Scusa! Non volevo spaventarti, sono solo timido 😅</h1>
+    <img src="MINACCIAPALA.png" alt="Finale 2a2">
+  </div>
+
+  <div id="risultato-2b1" style="display: none;">
+    <h1>Grazie! Non te ne pentirai, promesso! ❤️</h1>
+    <img src="MARTIPICCOLO.png" alt="Finale 2b1">
+  </div>
+
+  <div id="risultato-2b2" style="display: none;">
+    <h1>Capisco... rispetto la tua decisione 💔</h1>
+    <img src="MORTO.png" alt="Finale 2b2">
+  </div>
+
+  <script>
+    // LIVELLO 1
+    function scelta1() {
+      document.getElementById("schermata-iniziale").style.display = "none";
+      document.getElementById("risultato-1").style.display = "block";
+    }
+
+    function scelta2() {
+      document.getElementById("schermata-iniziale").style.display = "none";
+      document.getElementById("risultato-2").style.display = "block";
+    }
+
+    // LIVELLO 2 - Da risultato-1
+    function scelta1a() {
+      document.getElementById("risultato-1").style.display = "none";
+      document.getElementById("risultato-1a").style.display = "block";
+    }
+
+    function scelta1b() {
+      document.getElementById("risultato-1").style.display = "none";
+      document.getElementById("risultato-1b").style.display = "block";
+    }
+
+    // LIVELLO 2 - Da risultato-2
+    function scelta2a() {
+      document.getElementById("risultato-2").style.display = "none";
+      document.getElementById("risultato-2a").style.display = "block";
+    }
+
+    function scelta2b() {
+      document.getElementById("risultato-2").style.display = "none";
+      document.getElementById("risultato-2b").style.display = "block";
+    }
+
+    // LIVELLO 3 - Da risultato-1a
+    function scelta1a1() {
+      document.getElementById("risultato-1a").style.display = "none";
+      document.getElementById("risultato-1a1").style.display = "block";
+    }
+
+    function scelta1a2() {
+      document.getElementById("risultato-1a").style.display = "none";
+      document.getElementById("risultato-1a2").style.display = "block";
+    }
+
+    // LIVELLO 3 - Da risultato-1b
+    function scelta1b1() {
+      document.getElementById("risultato-1b").style.display = "none";
+      document.getElementById("risultato-1b1").style.display = "block";
+    }
+
+    function scelta1b2() {
+      document.getElementById("risultato-1b").style.display = "none";
+      document.getElementById("risultato-1b2").style.display = "block";
+    }
+
+    // LIVELLO 3 - Da risultato-2a
+    function scelta2a1() {
+      document.getElementById("risultato-2a").style.display = "none";
+      document.getElementById("risultato-2a1").style.display = "block";
+    }
+
+    function scelta2a2() {
+      document.getElementById("risultato-2a").style.display = "none";
+      document.getElementById("risultato-2a2").style.display = "block";
+    }
+
+    // LIVELLO 3 - Da risultato-2b
+    function scelta2b1() {
+      document.getElementById("risultato-2b").style.display = "none";
+      document.getElementById("risultato-2b1").style.display = "block";
+    }
+
+    function scelta2b2() {
+      document.getElementById("risultato-2b").style.display = "none";
+      document.getElementById("risultato-2b2").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
